@@ -15,7 +15,7 @@
   const base = "/";
   
   let mainMenuItems = [
-    { name: 'Home', link: base },
+    { name: 'Home', link: base.concat('home') },
     { name: 'Articles', link: base.concat('articles') },
     { name: 'About', link: base.concat('about') },
   ]
