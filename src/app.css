@@ -90,6 +90,7 @@ section {
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-self: center;
 }
 
 li {
@@ -101,6 +102,7 @@ li {
   margin: auto;
   justify-content: space-around;
 }
+
 
 .menubar-item {
   will-change: filter;
@@ -114,7 +116,7 @@ li {
 }
 
 .menubar-item:hover {
-  filter: drop-shadow(2px 2px 4px #646cff);
+  filter: drop-shadow(2px 2px 4px var(--trinary-colour));
 }
 
 img {
@@ -144,7 +146,8 @@ pre {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #1a1a1a;
-
+  
+  scrollbar-gutter: stable both-edges;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -153,6 +156,7 @@ pre {
 
   --primary-colour: #1a1a1a;
   --secondary-colour: #333333;
+  --trinary-colour: #646cff;
   --button-horizontal-padding: 32px;
   --button-vertical-padding: 8px;
 }
@@ -163,11 +167,11 @@ pre {
   text-align: center;
   will-change: filter;
   transition: filter 250ms;
-  border-color: #646cff;
+  border-color: var(--trinary-colour);
 }
 
 .title:hover {
-  filter: drop-shadow(4px 4px 4px #646cff);
+  filter: drop-shadow(4px 4px 4px var(--trinary-colour));
 }
 
 button {
@@ -189,11 +193,11 @@ button {
 
 button:hover {
   border-style: dashed;
-  border-color: #646cff;
+  border-color: var(--trinary-colour);
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  /*:root {
     color: #32485c;
     background-color: #ffffff;
   }
@@ -204,5 +208,5 @@ button:hover {
 
   button {
     background-color: #f9f9f9;
-  }
+  }*/
 }

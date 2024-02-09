@@ -28,7 +28,7 @@
 </script>
 
 <Router>
-  <main>
+  <main style="overflow: hidden;">
     <body>
       <div class="container">
         <h1 class="title">Tech Blog</h1>

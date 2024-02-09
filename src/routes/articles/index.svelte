@@ -12,6 +12,8 @@
     
     const base = "/blog/articles";
 
+    // TODO: https://kit.svelte.dev/docs/configuration better routing!
+
     const pageModules = import.meta.glob("../**/*.md", { eager: true });
     const pageModulesRaw = import.meta.glob("../**/*.md", { eager: true, as: "raw" });
 
