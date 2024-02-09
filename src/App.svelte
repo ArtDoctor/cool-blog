@@ -32,10 +32,13 @@
     <body>
       <div class="container">
         <h1 class="title">Tech Blog</h1>
-        <div style="opacity: {$progress};">
+        <div style="opacity: {$progress}; width: 100%; height: 100%">
           <MenuBar tweener={progress} menuItems={mainMenuItems}/>
-          <div class="custom"> 
+          <div class="content"> 
             <Route path={base}>
+              <h2 style="text-align: center;"> Welcome!</h2>
+            </Route>
+            <Route path="{base}/home/">
               <h2 style="text-align: center;"> Welcome!</h2>
             </Route>
             <Route path="{base}/about/" component={AboutRoute}/>
@@ -48,20 +51,3 @@
     </body>
   </main>
 </Router>
-
-<style>
-  .custom {
-    margin-top: 24px;
-  }
-  .title {
-    font-size: 3.6em;
-    line-height: 0.8;
-    text-align: center;
-    will-change: filter;
-    transition: filter 250ms;
-    border-color: #646cff;
-  }
-  .title:hover {
-    filter: drop-shadow(4px 4px 4px #646cff);
-  }
-</style>

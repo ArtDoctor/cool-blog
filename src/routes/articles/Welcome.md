@@ -55,8 +55,8 @@ Quotes:
 >>> Deeper nesting
 
 And the most important feature. Code:
-<Highlight language={typescript} code="const add = (a: number, b: number) => a + b;"/>
+<Highlight language={typescript} code={code}/>
 
-![Cat][def] ![Cat][def]
+![Cat][cat] ![Cat][cat]
 
-[def]: ../src/assets/cat.jpeg
+[cat]: ../src/assets/cat.jpeg

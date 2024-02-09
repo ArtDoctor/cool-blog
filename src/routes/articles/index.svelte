@@ -148,54 +148,28 @@
     <Router primary={false}>
         <div class="group">
             {#each getChildren(keyURL) as child}
-                <button class="element" type="button" on:click={ 
+                <button class="article-button" type="button" on:click={ 
                     () => progress.set(0)
                     .then(() => { 
                         navigate("/articles".concat(child));
                         progress.set(1); 
                     })}
                 >
-                   <h2>{getTitle(child)}</h2>
+                   <div class="article-button-title">{getTitle(child)}</div>
                 </button>
             {/each}
         </div>
 
         <Route path={keyURL} component={getComponent(keyURL)} primary={false}/>
 
-        <button class="element" type="button" on:click={ 
+        <button class="back-button" type="button" on:click={ 
             () => progress.set(0)
             .then(() => { 
                 navigate(-1);
                 progress.set(1); 
             })}
         >
-           <h2>{"Back"}</h2>
+           <div class="article-button-title">{"Back"}</div>
         </button>
     </Router>
 </main>
-
-<style>
-    main {
-        margin-top: 8px;
-    }
-
-    .group {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .element {
-        flex: 1 1 90%;
-        margin-top: 2px;
-        margin-bottom: 2px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        height: auto;
-        will-change: filter;
-        transition: filter 250ms;
-    }
-
-    .element:hover {
-        filter: drop-shadow(2px 2px 4px #646cff);
-  }
-</style>

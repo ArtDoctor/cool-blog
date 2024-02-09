@@ -5,9 +5,9 @@
 </script>
 
 <Router>
-  <div class="menuElementGroup">
+  <div class="menubar-group">
     {#each menuItems as {name, link}, i} 
-    <button class="menuBarItem" type="button"
+    <button class="menubar-item" type="button"
     on:click={ 
         () => tweener.set(0)
         .then(() => { 
@@ -19,22 +19,3 @@
     {/each}
   </div>
 </Router>
-
-<style>
-  .menuElementGroup {
-    display: block; 
-    margin: auto;
-    justify-content: space-around;
-  }
-
-  .menuBarItem {
-    will-change: filter;
-    transition: filter 250ms;
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-
-  .menuBarItem:hover {
-    filter: drop-shadow(2px 2px 4px #646cff);
-  }
-</style>
