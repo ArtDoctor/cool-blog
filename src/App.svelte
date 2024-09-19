@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import svelteLogo from './assets/svelte.svg'
+  
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
   import MenuBar from './lib/MenuBar.svelte'
@@ -12,12 +11,12 @@
   import ArticlesRoute from "./routes/articles/index.svelte";
   import AboutRoute from "./routes/about/index.svelte";
 
-  const base = "/";
+  const base = "/blog";
   
   let mainMenuItems = [
-    { name: 'Home', link: base.concat('home') },
-    { name: 'Articles', link: base.concat('articles') },
-    { name: 'About', link: base.concat('about') },
+    { name: 'Home', link: base.concat('/home') },
+    { name: 'Articles', link: base.concat('/articles') },
+    { name: 'About', link: base.concat('/about') },
   ]
 
   const progress = tweened(0, {

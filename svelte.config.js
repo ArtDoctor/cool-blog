@@ -19,7 +19,7 @@ const commonPreprocessors = [
 	vitePreprocess()
 ];
 
-const dev = process.argv.includes('dev');
+const isBuilding = process.argv.includes('build');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -40,13 +40,21 @@ const config = {
 		]
 	},
   	preprocess: [...commonPreprocessors],
-	
 	kit: {
-        adapter: adapter(),
+        /*adapter: adapter({
+			fallback: '404.htmp',
+			strict: false,
+			pages: 'build',
+			assets: 'build',
+		}),*/
 		paths: {
-			base: dev ? '' : process.env.BASE_PATH,
-        }
+			base: './blog',
+        },
     }
+}
+
+if(isBuilding) {
+	config.kit.paths.assets = 'https://jukaio.github.io/blog/assets'
 }
 
 export default config;

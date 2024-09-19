@@ -57,6 +57,6 @@ Quotes:
 And the most important feature. Code:
 <Highlight language={typescript} code={code}/>
 
-![Cat][cat] ![Cat][cat]
+![image](/assets/cat.jpeg) ![Cat][cat]
 
-[cat]: ../src/assets/cat.jpeg
+[cat]: /assets/cat.jpeg

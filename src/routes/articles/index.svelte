@@ -1,4 +1,6 @@
 <script lang="ts">
+    export const prerender = true;
+
     import { tweened } from 'svelte/motion';
 	import { cubicOut, sineIn, sineOut } from 'svelte/easing';
     
@@ -141,7 +143,7 @@
     });
 
     $: localURL = $ReactiveURL.pathname;
-    $: keyURL = $ReactiveURL.pathname.replace("/articles", "");
+    $: keyURL = $ReactiveURL.pathname.replace(base, "");
 
     progress.set(1);
 </script>
@@ -153,7 +155,7 @@
                 <button class="article-button" type="button" on:click={ 
                     () => progress.set(0)
                     .then(() => { 
-                        navigate("/articles".concat(child));
+                        navigate(base.concat(child));
                         progress.set(1); 
                     })}
                 >
